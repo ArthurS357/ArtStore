@@ -1,14 +1,11 @@
 import prisma from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
 
-interface ApiContext {
-  params: {
-    id: string;
-  };
-}
-
-export async function GET(request: NextRequest, context: ApiContext) {
-  const { id } = context.params;
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const { id } = params;
 
   try {
     const product = await prisma.product.findUnique({
