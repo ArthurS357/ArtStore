@@ -1,6 +1,6 @@
 # 🎨 ArtStore - E-commerce Full-Stack
 
-![Página Inicial do ArtStore](https://i.imgur.com/vHq4eYl.png) <p align="center">
+<p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="[https://art-store-steel.vercel.app/]"><strong>Ver Demonstração Ao Vivo »</strong></a>
+  <a href="https://art-store-steel.vercel.app/"><strong>Ver Demonstração Ao Vivo »</strong></a>
 </p>
 
 ## ✨ Sobre o Projeto
@@ -27,7 +27,7 @@ ArtStore é uma aplicação web full-stack que simula uma loja virtual para a ve
 - **Catálogo de Produtos:** Exibição de produtos carregados de um banco de dados PostgreSQL.
 - **Busca em Tempo Real:** Filtro de produtos por nome ou descrição, com otimização de performance através de *debounce*.
 - **Autenticação Completa:** Sistema de registro e login de usuários com senhas criptografadas, utilizando **NextAuth.js**.
-- **Rotas Protegidas:** Uso de **Middleware** para proteger páginas (como o carrinho) e exigir autenticação.
+- **Rotas Protegidas:** Uso de **Middleware** para proteger páginas e exigir autenticação.
 - **Carrinho de Compras:** Estado global gerenciado com React Context, com funcionalidades para adicionar, remover e alterar a quantidade de itens.
 - **Persistência de Dados:** O carrinho do usuário é salvo no **LocalStorage**, mantendo os itens mesmo após recarregar a página.
 - **Checkout Simulado:** Fluxo de finalização de compra que leva a uma página de sucesso.
@@ -62,8 +62,8 @@ Siga os passos abaixo para rodar o ArtStore na sua máquina.
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/](https://github.com/)[ArthurS357]/artstore.git
-   cd artstore
+   git clone [https://github.com/ArthurS357/ArtStore.git](https://github.com/ArthurS357/ArtStore.git)
+   cd ArtStore
 ````
 
 2.  **Instale as dependências:**
@@ -75,7 +75,7 @@ Siga os passos abaixo para rodar o ArtStore na sua máquina.
 3.  **Configure as Variáveis de Ambiente:**
 
       - Crie um arquivo chamado `.env` na raiz do projeto.
-      - Copie o conteúdo do arquivo `.env.example` (se você tiver um) ou adicione as seguintes variáveis:
+      - Adicione as seguintes variáveis:
         ```
         # URL do banco de dados (para desenvolvimento local com SQLite)
         DATABASE_URL="file:./dev.db"
@@ -108,9 +108,7 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
 
 ## 👨‍💻 Autor
 
-  - **[Arthur S.]** - [(https://www.linkedin.com/in/arthur-sabino1337-/)]
+  - **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
 
 <!-- end list -->
 
-```
-```
