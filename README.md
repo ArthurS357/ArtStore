@@ -64,8 +64,6 @@ Siga os passos abaixo para rodar o ArtStore na sua máquina.
    ```bash
    git clone [https://github.com/ArthurS357/ArtStore.git](https://github.com/ArthurS357/ArtStore.git)
    cd ArtStore
-````markdown
-````
 
 2.  **Instale as dependências:**
 
@@ -113,5 +111,3 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
 
 <!-- end list -->
 
-```
-```
