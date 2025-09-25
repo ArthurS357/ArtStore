@@ -1,7 +1,5 @@
 # 🎨 ArtStore - E-commerce Full-Stack
 
-![Página Inicial do ArtStore](https://i.imgur.com/vHq4eYl.png)
-
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
