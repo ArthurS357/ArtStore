@@ -109,5 +109,113 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
 
   - **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
 
+----------
+# 🎨 ArtStore - Full-Stack E-commerce
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+</p>
+
+<p align="center">
+  A complete e-commerce project built to demonstrate modern web development best practices.
+</p>
+
+<p align="center">
+  <a href="https://art-store-steel.vercel.app/"><strong>View Live Demo »</strong></a>
+</p>
+
+## ✨ About the Project
+
+ArtStore is a full-stack web application that simulates a virtual store for selling digital art and posters. The project was developed from scratch as a portfolio item, covering the entire application lifecycle, from database and API modeling to creating an interactive, reactive, and secure user interface, finishing with deployment to a production environment.
+
+---
+
+## 🚀 Features
+
+- **Product Catalog:** Displays products loaded from a PostgreSQL database.
+- **Real-Time Search:** Filter products by name or description, with performance optimization through *debounce*.
+- **Complete Authentication:** User registration and login system with encrypted passwords using **NextAuth.js**.
+- **Protected Routes:** Use of **Middleware** to protect pages and require authentication.
+- **Shopping Cart:** Global state managed with React Context, with features to add, remove, and change item quantities.
+- **Data Persistence:** The user's cart is saved in **LocalStorage**, keeping items even after reloading the page.
+- **Simulated Checkout:** A checkout flow that leads to a success page.
+- **Modern Interface:** Responsive design built with Tailwind CSS and fluid animations with **Framer Motion**.
+- **Visual Feedback:** "Toast" notifications (`react-hot-toast`) for actions like adding items to the cart and logging in.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Database:** Prisma (ORM), PostgreSQL (Production), SQLite (Development)
+- **Authentication:** NextAuth.js (Auth.js)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Notifications:** React Hot Toast
+- **Icons:** React Icons
+- **Deployment:** Vercel
+
+---
+
+## 🏁 How to Run the Project Locally
+
+Follow the steps below to run ArtStore on your machine.
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Steps
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/ArthurS357/ArtStore.git](https://github.com/ArthurS357/ArtStore.git)
+    cd ArtStore
+    ```
+
+2.  **Install the dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up the Environment Variables:**
+    - Create a file named `.env` in the project root.
+    - Add the following variables:
+      ```
+      # Database URL (for local development with SQLite)
+      DATABASE_URL="file:./dev.db"
+
+      # Secret key for NextAuth.js
+      # Generate one at: [https://generate-secret.vercel.app/32](https://generate-secret.vercel.app/32)
+      NEXTAUTH_SECRET="YOUR_SECRET_KEY_HERE"
+      ```
+
+4.  **Set up the Database:**
+    - Run the migration to create the local database tables:
+      ```bash
+      npx prisma migrate dev
+      ```
+    - (Optional) Seed the database with sample data:
+      ```bash
+      npm run prisma:seed
+      ```
+
+5.  **Run the Development Server:**
+    ```bash
+    npm run dev
+    ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+---
+
+## 👨‍💻 Author
+
+- **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
 <!-- end list -->
 
