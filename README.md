@@ -9,12 +9,20 @@
 </p>
 
 <p align="center">
-  Um projeto de e-commerce completo, construído para demonstrar as melhores práticas de desenvolvimento web moderno.
+  Um projeto de e-commerce completo para demonstrar as melhores práticas de desenvolvimento web moderno.
+  <br>
+  <em>A complete e-commerce project to demonstrate modern web development best practices.</em>
 </p>
 
 <p align="center">
-  <a href="https://art-store-steel.vercel.app/"><strong>Ver Demonstração Ao Vivo »</strong></a>
+  <a href="https://art-store-steel.vercel.app/"><strong>Ver Demo / View Demo »</strong></a>
 </p>
+
+<br>
+
+<details>
+<summary><strong>🇧🇷 README em Português</strong></summary>
+<br>
 
 ## ✨ Sobre o Projeto
 
@@ -64,70 +72,50 @@ Siga os passos abaixo para rodar o ArtStore na sua máquina.
    ```bash
    git clone [https://github.com/ArthurS357/ArtStore.git](https://github.com/ArthurS357/ArtStore.git)
    cd ArtStore
-
+   ```
 2.  **Instale as dependências:**
-
     ```bash
     npm install
     ```
-
 3.  **Configure as Variáveis de Ambiente:**
+    - Crie um arquivo chamado `.env` na raiz do projeto.
+    - Adicione as seguintes variáveis:
+      ```
+      # URL do banco de dados (para desenvolvimento local com SQLite)
+      DATABASE_URL="file:./dev.db"
 
-      - Crie um arquivo chamado `.env` na raiz do projeto.
-      - Adicione as seguintes variáveis:
-        ```
-        # URL do banco de dados (para desenvolvimento local com SQLite)
-        DATABASE_URL="file:./dev.db"
-
-        # Chave secreta para o NextAuth.js
-        # Gere uma em: [https://generate-secret.vercel.app/32](https://generate-secret.vercel.app/32)
-        NEXTAUTH_SECRET="SUA_CHAVE_SECRETA_AQUI"
-        ```
-
+      # Chave secreta para o NextAuth.js
+      # Gere uma em: [https://generate-secret.vercel.app/32](https://generate-secret.vercel.app/32)
+      NEXTAUTH_SECRET="SUA_CHAVE_SECRETA_AQUI"
+      ```
 4.  **Configure o Banco de Dados:**
-
-      - Execute a migração para criar as tabelas do banco de dados local:
-        ```bash
-        npx prisma migrate dev
-        ```
-      - (Opcional) Popule o banco com dados de exemplo:
-        ```bash
-        npm run prisma:seed
-        ```
-
+    - Execute a migração para criar as tabelas do banco de dados local:
+      ```bash
+      npx prisma migrate dev
+      ```
+    - (Opcional) Popule o banco com dados de exemplo:
+      ```bash
+      npm run prisma:seed
+      ```
 5.  **Rode o Servidor de Desenvolvimento:**
-
     ```bash
     npm run dev
     ```
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
-Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) no seu navegador para ver o resultado.
-
------
+---
 
 ## 👨‍💻 Autor
 
-  - **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
+  - **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1377-/)
 
-----------
-----------
-# 🎨 ArtStore - Full-Stack E-commerce
+</details>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-</p>
+<br>
 
-<p align="center">
-  A complete e-commerce project built to demonstrate modern web development best practices.
-</p>
-
-<p align="center">
-  <a href="https://art-store-steel.vercel.app/"><strong>View Live Demo »</strong></a>
-</p>
+<details>
+<summary><strong>🇬🇧 README in English</strong></summary>
+<br>
 
 ## ✨ About the Project
 
@@ -178,12 +166,10 @@ Follow the steps below to run ArtStore on your machine.
     git clone [https://github.com/ArthurS357/ArtStore.git](https://github.com/ArthurS357/ArtStore.git)
     cd ArtStore
     ```
-
 2.  **Install the dependencies:**
     ```bash
     npm install
     ```
-
 3.  **Set up the Environment Variables:**
     - Create a file named `.env` in the project root.
     - Add the following variables:
@@ -195,7 +181,6 @@ Follow the steps below to run ArtStore on your machine.
       # Generate one at: [https://generate-secret.vercel.app/32](https://generate-secret.vercel.app/32)
       NEXTAUTH_SECRET="YOUR_SECRET_KEY_HERE"
       ```
-
 4.  **Set up the Database:**
     - Run the migration to create the local database tables:
       ```bash
@@ -205,18 +190,16 @@ Follow the steps below to run ArtStore on your machine.
       ```bash
       npm run prisma:seed
       ```
-
 5.  **Run the Development Server:**
     ```bash
     npm run dev
     ```
-
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 ---
 
 ## 👨‍💻 Author
 
-- **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
-<!-- end list -->
+- **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1377-/)
 
+</details>
