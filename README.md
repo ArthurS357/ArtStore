@@ -110,6 +110,7 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
   - **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
 
 ----------
+----------
 # 🎨 ArtStore - Full-Stack E-commerce
 
 <p align="center">
