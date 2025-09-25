@@ -1,21 +1,13 @@
-
------
-
-### **README.md Final e Personalizado**
-
-
-
-````markdown
 # 🎨 ArtStore - E-commerce Full-Stack
 
-
+![Página Inicial do ArtStore](https://i.imgur.com/vHq4eYl.png)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
 </p>
 
 <p align="center">
@@ -62,7 +54,7 @@ ArtStore é uma aplicação web full-stack que simula uma loja virtual para a ve
 
 ## 🏁 Como Executar o Projeto Localmente
 
-Siga os passos abaixo para rodar o ArtStore em sua máquina.
+Siga os passos abaixo para rodar o ArtStore na sua máquina.
 
 ### Pré-requisitos
 - Node.js (v18 ou superior)
@@ -74,6 +66,7 @@ Siga os passos abaixo para rodar o ArtStore em sua máquina.
    ```bash
    git clone [https://github.com/ArthurS357/ArtStore.git](https://github.com/ArthurS357/ArtStore.git)
    cd ArtStore
+````markdown
 ````
 
 2.  **Instale as dependências:**
@@ -122,5 +115,5 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
 
 <!-- end list -->
 
-````
-
+```
+```
