@@ -62,7 +62,7 @@ ArtStore é uma aplicação web full-stack que simula uma loja virtual para a ve
 
 ## 🏁 Como Executar o Projeto Localmente
 
-Siga os passos abaixo para rodar o ArtStore na sua máquina.
+Siga os passos abaixo para rodar o ArtStore em sua máquina.
 
 ### Pré-requisitos
 - Node.js (v18 ou superior)
