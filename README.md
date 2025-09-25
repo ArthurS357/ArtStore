@@ -1,6 +1,8 @@
 ````markdown
 # 🎨 ArtStore - E-commerce Full-Stack
 
+
+
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
@@ -112,3 +114,6 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
   - **Arthur S.** - [LinkedIn](https://www.linkedin.com/in/arthur-sabino1337-/)
 
 <!-- end list -->
+
+```
+```
