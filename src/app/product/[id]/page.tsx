@@ -5,6 +5,7 @@ import { Product } from '@prisma/client';
 import { useCart } from '@/context/CartContext';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -70,9 +71,11 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             transition={{ duration: 0.5 }}
             className="p-6"
           >
-            <img
+            <Image
               src={product.imageUrl}
               alt={product.name}
+              width={800}
+              height={800}
               className="w-full h-auto object-contain rounded-lg"
             />
           </motion.div>
