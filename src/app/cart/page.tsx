@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiPlus, FiMinus, FiTrash2, FiShoppingCart } from 'react-icons/fi';
+import Image from 'next/image'; 
 
 export default function CartPage() {
   const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart, checkout } = useCart();
@@ -61,7 +62,13 @@ export default function CartPage() {
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                 className="grid grid-cols-12 gap-4 items-center bg-white p-4 rounded-xl shadow-lg border border-slate-200"
               >
-                <img src={item.imageUrl} alt={item.name} className="col-span-3 md:col-span-2 w-full h-auto object-cover rounded-lg" />
+                <Image
+                  src={item.imageUrl}
+                  alt={item.name}
+                  width={100}
+                  height={100}
+                  className="col-span-3 md:col-span-2 w-full h-auto object-cover rounded-lg"
+                />
                 <div className="col-span-9 md:col-span-4">
                   <h2 className="font-semibold text-lg text-slate-800">{item.name}</h2>
                   <p className="text-slate-500">R$ {item.price.toFixed(2).replace('.', ',')}</p>
@@ -83,7 +90,7 @@ export default function CartPage() {
             ))}
           </AnimatePresence>
         </motion.div>
-
+        
         {/* Coluna do resumo do pedido */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }} 
