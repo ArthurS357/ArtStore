@@ -5,6 +5,7 @@ import { Product } from '@prisma/client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiSearch } from 'react-icons/fi';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,7 +22,6 @@ type ProductCardProps = {
   product: Product;
 };
 function ProductCard({ product }: ProductCardProps) {
-  // ...
   return (
     <motion.div
       variants={itemVariants} 
@@ -31,9 +31,11 @@ function ProductCard({ product }: ProductCardProps) {
     >
       <Link href={`/product/${product.id}`} className="group">
         <div className="overflow-hidden">
-          <img
+          <Image
             src={product.imageUrl}
             alt={product.name}
+            width={400}
+            height={400}
             className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
@@ -82,17 +84,22 @@ export default function HomePage() {
       fetchProducts();
     }, 300); 
 
-    return () => clearTimeout(delayDebounceFn); // Limpa o timeout anterior se o usuário continuar digitando
+    return () => clearTimeout(delayDebounceFn);
   }, [searchTerm]);
 
   return (
     <main className="min-h-screen bg-gray-100">
-      <div className="relative bg-gray-900 text-white flex items-center justify-center p-16">
-        <img
-          src="/images/hero-bg.jpg"
-          alt="ArtStore Hero"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-        />
+      {/* SEÇÃO HERO */}
+      <div 
+        className="relative text-white flex items-center justify-center p-16"
+        style={{
+          backgroundImage: `url('/images/hero-bg.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '400px'
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay escuro */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -102,7 +109,7 @@ export default function HomePage() {
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-extrabold mb-4">
             Inspire-se. Decore sua vida.
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-lg mb-8 opacity-80">
+          <motion.p variants={itemVariants} className="text-lg mb-8 opacity-90">
             Descubra uma coleção única de arte digital e posters para transformar seu espaço.
           </motion.p>
           <motion.div variants={itemVariants}>
@@ -121,7 +128,7 @@ export default function HomePage() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           className="text-3xl font-bold text-center mb-12 text-gray-800"
         >
           Nossa Coleção de Arte
@@ -142,7 +149,7 @@ export default function HomePage() {
           <p className="text-center">Buscando...</p>
         ) : (
           <motion.div
-            key={searchTerm} // Adiciona uma chave para forçar a re-animação
+            key={searchTerm}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
