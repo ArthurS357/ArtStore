@@ -64,7 +64,7 @@ export default function CartPage() {
               >
                 <Image
                   src={item.imageUrl}
-                  alt={item.name}
+                  alt={`Miniatura da obra de arte ${item.name}`}
                   width={100}
                   height={100}
                   className="col-span-3 md:col-span-2 w-full h-auto object-cover rounded-lg"

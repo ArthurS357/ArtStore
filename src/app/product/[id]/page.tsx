@@ -73,7 +73,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           >
             <Image
               src={product.imageUrl}
-              alt={product.name}
+              alt={`Imagem principal da obra de arte ${product.name}`}
               width={800}
               height={800}
               className="w-full h-auto object-contain rounded-lg"
@@ -101,7 +101,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleAddToCart}
-                className="w-full bg-indigo-600 text-white text-lg font-semibold py-4 rounded-lg hover:bg-indigo-700 transition-colors shadow-md"
+                className="w-full bg-indigo-600 text-white text-lg font-semibold py-4 rounded-lg hover:bg-indigo-700 transition-colors shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
               >
                 Adicionar ao Carrinho
               </motion.button>

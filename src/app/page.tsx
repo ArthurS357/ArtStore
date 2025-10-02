@@ -24,7 +24,7 @@ type ProductCardProps = {
 function ProductCard({ product }: ProductCardProps) {
   return (
     <motion.div
-      variants={itemVariants} 
+      variants={itemVariants}
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.2 }}
       className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden"
@@ -33,7 +33,7 @@ function ProductCard({ product }: ProductCardProps) {
         <div className="overflow-hidden">
           <Image
             src={product.imageUrl}
-            alt={product.name}
+            alt={`Poster da obra de arte chamada ${product.name}`} 
             width={400}
             height={400}
             className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -82,7 +82,7 @@ export default function HomePage() {
       };
 
       fetchProducts();
-    }, 300); 
+    }, 300);
 
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm]);
@@ -90,7 +90,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-100">
       {/* SEÇÃO HERO */}
-      <div 
+      <div
         className="relative text-white flex items-center justify-center p-16"
         style={{
           backgroundImage: `url('/images/hero-bg.jpg')`,
@@ -133,7 +133,7 @@ export default function HomePage() {
         >
           Nossa Coleção de Arte
         </motion.h2>
-        
+
         <div className="mb-12 relative max-w-lg mx-auto">
           <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
           <input
