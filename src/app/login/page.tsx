@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
-import { FiMail, FiLock } from 'react-icons/fi'; // Importando ícones
+import { FiMail, FiLock } from 'react-icons/fi';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -62,28 +62,36 @@ export default function LoginPage() {
             Bem-vindo de volta!
           </motion.h2>
           
-          <motion.div variants={itemVariants} className="mb-4 relative">
-            <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input 
-              type="email"
-              placeholder="Email"
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
-              required 
-            />
+          <motion.div variants={itemVariants} className="mb-4">
+            <label htmlFor="email" className="sr-only">Email</label>
+            <div className="relative">
+              <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input 
+                id="email" // <-- Adicione um ID
+                type="email"
+                placeholder="Email"
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                required 
+              />
+            </div>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="mb-6 relative">
-            <FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input 
-              type="password"
-              placeholder="Senha"
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-              className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
-              required 
-            />
+          <motion.div variants={itemVariants} className="mb-6">
+            <label htmlFor="password" className="sr-only">Senha</label>
+            <div className="relative">
+              <FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input 
+                id="password" // <-- Adicione um ID
+                type="password"
+                placeholder="Senha"
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                required 
+              />
+            </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
