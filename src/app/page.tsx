@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -69,7 +68,6 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Efeito para a busca inicial (sem debounce)
   useEffect(() => {
     const fetchInitialProducts = async () => {
       setIsLoading(true);
@@ -86,11 +84,8 @@ export default function HomePage() {
       }
     };
     fetchInitialProducts();
-  }, []); // Roda apenas uma vez
-
-  // Efeito para a busca com debounce
+  }, []); 
   useEffect(() => {
-    // Não roda na carga inicial
     if (searchTerm === '' && products.length > 0) return;
 
     const delayDebounceFn = setTimeout(() => {
@@ -109,7 +104,6 @@ export default function HomePage() {
         }
       };
       
-      // Evita a busca na primeira renderização, que já foi feita pelo outro useEffect
       if (products.length > 0 || searchTerm !== '') {
          fetchProducts();
       }

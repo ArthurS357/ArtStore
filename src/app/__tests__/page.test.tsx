@@ -1,4 +1,3 @@
-// src/app/__tests__/page.test.tsx
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import HomePage from '../page'
@@ -16,18 +15,6 @@ describe('HomePage Component', () => {
   beforeEach(() => {
     (fetch as jest.Mock).mockClear();
   });
-
-  // Este teste agora falha, pois a carga inicial mudou
-  // it('should show a loading message initially', () => {
-  //   (fetch as jest.Mock).mockResolvedValueOnce({
-  //     ok: true,
-  //     json: () => Promise.resolve(mockProducts),
-  //   });
-  //   render(<HomePage />);
-  //   // O estado de loading agora é muito rápido, este teste pode ser instável
-  //   // Vamos focar nos resultados finais.
-  //   expect(screen.getByText('Carregando produtos...')).toBeInTheDocument();
-  // });
 
   it('should render product cards after a successful fetch', async () => {
     (fetch as jest.mock).mockResolvedValueOnce({

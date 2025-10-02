@@ -67,7 +67,7 @@ export default function LoginPage() {
             <div className="relative">
               <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input 
-                id="email" // <-- Adicione um ID
+                id="email" 
                 type="email"
                 placeholder="Email"
                 value={email} 
@@ -83,7 +83,7 @@ export default function LoginPage() {
             <div className="relative">
               <FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input 
-                id="password" // <-- Adicione um ID
+                id="password" 
                 type="password"
                 placeholder="Senha"
                 value={password} 
