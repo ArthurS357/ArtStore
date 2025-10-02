@@ -24,31 +24,36 @@ type ProductCardProps = {
 function ProductCard({ product }: ProductCardProps) {
   return (
     <motion.div
-      variants={itemVariants}
+      variants={itemVariants} 
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.2 }}
-      className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden"
+      className="rounded-xl"
     >
-      <Link href={`/product/${product.id}`} className="group">
-        <div className="overflow-hidden">
-          <Image
-            src={product.imageUrl}
-            alt={`Poster da obra de arte chamada ${product.name}`} 
-            width={400}
-            height={400}
-            className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        <div className="p-6">
-          <h2 className="text-xl font-semibold text-gray-800 truncate">{product.name}</h2>
-          <p className="text-gray-500 text-sm mt-1">{product.description.substring(0, 50)}...</p>
-          <div className="mt-4 flex justify-between items-center">
-            <span className="text-2xl font-bold text-indigo-600">
-              R$ {product.price.toFixed(2).replace('.', ',')}
-            </span>
-            <span className="text-sm text-gray-500 group-hover:text-indigo-600 transition-colors">
-              Ver detalhes →
-            </span>
+      <Link 
+        href={`/product/${product.id}`} 
+        className="group block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+      >
+        <div className="bg-white rounded-xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+          <div className="overflow-hidden">
+            <Image
+              src={product.imageUrl}
+              alt={`Poster da obra de arte chamada ${product.name}`} 
+              width={400}
+              height={400}
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="p-6">
+            <h2 className="text-xl font-semibold text-gray-800 truncate">{product.name}</h2>
+            <p className="text-gray-500 text-sm mt-1">{product.description.substring(0, 50)}...</p>
+            <div className="mt-4 flex justify-between items-center">
+              <span className="text-2xl font-bold text-indigo-600">
+                R$ {product.price.toFixed(2).replace('.', ',')}
+              </span>
+              <span className="text-sm text-gray-500 group-hover:text-indigo-600 transition-colors">
+                Ver detalhes →
+              </span>
+            </div>
           </div>
         </div>
       </Link>
@@ -89,7 +94,6 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-gray-100">
-      {/* SEÇÃO HERO */}
       <div
         className="relative text-white flex items-center justify-center p-16"
         style={{
@@ -99,7 +103,7 @@ export default function HomePage() {
           minHeight: '400px'
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay escuro */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -123,7 +127,6 @@ export default function HomePage() {
         </motion.div>
       </div>
 
-      {/* Seção de Produtos */}
       <section id="products" className="container mx-auto p-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
