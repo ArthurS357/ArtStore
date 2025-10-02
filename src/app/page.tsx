@@ -1,3 +1,4 @@
+// src/app/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -21,6 +22,7 @@ const itemVariants = {
 type ProductCardProps = {
   product: Product;
 };
+
 function ProductCard({ product }: ProductCardProps) {
   return (
     <motion.div
@@ -67,30 +69,55 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Efeito para a busca inicial (sem debounce)
   useEffect(() => {
+    const fetchInitialProducts = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`/api/products`);
+        if (!response.ok) throw new Error('Falha ao buscar produtos');
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Erro ao buscar produtos:", error);
+        setProducts([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchInitialProducts();
+  }, []); // Roda apenas uma vez
+
+  // Efeito para a busca com debounce
+  useEffect(() => {
+    // Não roda na carga inicial
+    if (searchTerm === '' && products.length > 0) return;
+
     const delayDebounceFn = setTimeout(() => {
       const fetchProducts = async () => {
         setIsLoading(true);
         try {
           const response = await fetch(`/api/products?search=${searchTerm}`);
-          if (!response.ok) {
-            throw new Error('Falha ao buscar produtos');
-          }
+          if (!response.ok) throw new Error('Falha ao buscar produtos');
           const data = await response.json();
           setProducts(data);
         } catch (error) {
-          console.error("Erro ao buscar produtos:", error);
+          console.error("Erro ao buscar com busca:", error);
           setProducts([]);
         } finally {
           setIsLoading(false);
         }
       };
-
-      fetchProducts();
+      
+      // Evita a busca na primeira renderização, que já foi feita pelo outro useEffect
+      if (products.length > 0 || searchTerm !== '') {
+         fetchProducts();
+      }
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm]);
+
 
   return (
     <main className="min-h-screen bg-gray-100">
