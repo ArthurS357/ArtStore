@@ -18,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-br">
       <body className={`${inter.className} bg-gray-100 flex flex-col min-h-screen`}>
+        <link rel="preload" href="/images/hero-bg.webp" as="image" />
         <AuthProvider>
           <CartProvider>
             <Toaster position="bottom-center" />

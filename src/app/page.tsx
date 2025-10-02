@@ -97,7 +97,7 @@ export default function HomePage() {
       <div
         className="relative text-white flex items-center justify-center p-16"
         style={{
-          backgroundImage: `url('/images/hero-bg.jpg')`,
+          backgroundImage: `url('/images/hero-bg.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           minHeight: '400px'
