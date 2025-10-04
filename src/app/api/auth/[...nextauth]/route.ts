@@ -39,6 +39,14 @@ export const authOptions: AuthOptions = {
   pages: {
     signIn: '/login',
   },
+  callbacks: {
+    session({ session, token }) {
+      if (token && session.user) {
+        (session.user as any).id = token.sub; 
+      }
+      return session;
+    },
+  },
   session: {
     strategy: "jwt"
   },
