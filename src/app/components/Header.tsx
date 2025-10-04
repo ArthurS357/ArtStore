@@ -28,17 +28,19 @@ export default function Header() {
               Carrinho ({totalItems})
             </div>
           </Link>
+
           {session ? (
             <>
+              {/* LINK ADICIONADO AQUI */}
               <Link href="/perfil" className="text-gray-600 hover:text-indigo-600 transition-colors">
                 Meus Pedidos
               </Link>
               <div className="flex items-center gap-2">
                 <span className="text-gray-700 hidden sm:block">Olá, {session.user?.name?.split(' ')[0]}</span>
-                <motion.button
+                <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => signOut()}
+                  onClick={() => signOut()} 
                   className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow"
                 >
                   Sair
