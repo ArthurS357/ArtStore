@@ -4,6 +4,7 @@ import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import toast from 'react-hot-toast';
 import { FiPlus, FiMinus, FiTrash2, FiShoppingCart } from 'react-icons/fi';
 import Image from 'next/image'; 
 
@@ -11,10 +12,36 @@ export default function CartPage() {
   const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart, checkout } = useCart();
   const router = useRouter();
   const totalCost = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const handleCheckout = async () => {
+    const toastId = toast.loading('Processando seu pedido...');
 
-  const handleCheckout = () => {
-    checkout();
-    router.push('/checkout/success');
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cartItems, totalCost }),
+      });
+      
+      toast.dismiss(toastId);
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          toast.error('Você precisa estar logado para finalizar a compra.');
+          router.push('/login'); 
+          return;
+        }
+        throw new Error('Falha ao criar o pedido.');
+      }
+      
+      toast.success('Pedido criado com sucesso!');
+      checkout(); 
+      router.push('/checkout/success'); 
+
+    } catch (error) {
+      toast.dismiss(toastId);
+      toast.error('Ocorreu um erro ao finalizar seu pedido.');
+      console.error(error);
+    }
   };
 
   if (cartItems.length === 0) {
