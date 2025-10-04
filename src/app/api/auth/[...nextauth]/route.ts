@@ -1,3 +1,5 @@
+ISSO_E_UM_ERRO_PROPOSITAL_PARA_TESTE;
+
 import NextAuth, { AuthOptions } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
