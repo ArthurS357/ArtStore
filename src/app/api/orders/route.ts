@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'; 
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]/route';
 import prisma from '@/lib/prisma';
@@ -29,11 +29,8 @@ export async function POST(request: Request) {
           })),
         },
       },
-      include: {
-        items: true, 
-      },
+      include: { items: true },
     });
-
     return NextResponse.json(newOrder, { status: 201 });
   } catch (error) {
     console.error("Erro ao criar pedido:", error);
@@ -50,21 +47,14 @@ export async function GET(request: Request) {
 
   try {
     const orders = await prisma.order.findMany({
-      where: {
-        userId: userId,
-      },
+      where: { userId: userId },
       include: {
         items: {
-          include: {
-            product: true,
-          },
+          include: { product: true },
         },
       },
-      orderBy: {
-        createdAt: 'desc',
-      },
+      orderBy: { createdAt: 'desc' },
     });
-
     return NextResponse.json(orders);
   } catch (error) {
     console.error("Erro ao buscar histórico de pedidos:", error);
