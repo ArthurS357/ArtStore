@@ -120,7 +120,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen dark:bg-dark-background">
       <div
-        className="relative text-white flex items-center justify-center p-16"
+        className="relative text-white flex items-center justify-center p-8 sm:p-16" 
         style={{
           backgroundImage: `url('/images/hero-bg.webp')`,
           backgroundSize: 'cover',
@@ -135,7 +135,8 @@ export default function HomePage() {
           animate="visible"
           className="relative z-10 text-center max-w-2xl"
         >
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-extrabold mb-4">
+          {/* AQUI: Ajuste no tamanho da fonte */}
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
             Inspire-se. Decore sua vida.
           </motion.h1>
           <motion.p variants={itemVariants} className="text-lg mb-8 opacity-90">
@@ -152,7 +153,7 @@ export default function HomePage() {
         </motion.div>
       </div>
 
-      <section id="products" className="container mx-auto p-8">
+      <section id="products" className="container mx-auto p-4 sm:p-8"> {/* Ajustado o padding para telas menores */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -181,7 +182,7 @@ export default function HomePage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8"
           >
             {products.length > 0 ? (
               products.map((product) => (
