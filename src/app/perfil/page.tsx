@@ -83,8 +83,26 @@ export default function ProfilePage() {
               transition={{ delay: index * 0.1 }}
               className="bg-white dark:bg-dark-surface rounded-xl shadow-lg p-6 border border-gray-200 dark:border-dark-border"
             >
-              <div className="flex flex-wrap justify-between items-center mb-4 pb-4 border-b dark:border-dark-border">
-                {/* ... (conteúdo do cabeçalho do pedido) */}
+              <div className="flex flex-wrap justify-between items-center gap-4 mb-4 pb-4 border-b dark:border-dark-border">
+                <div>
+                  <h3 className="font-semibold text-gray-800 dark:text-dark-text flex items-center gap-2">
+                    <FiPackage />
+                    Pedido #{order.id.substring(0, 8)}...
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-dark-text-secondary flex items-center gap-2 mt-1">
+                    <FiCalendar />
+                    {new Date(order.createdAt).toLocaleDateString('pt-BR')}
+                  </p>
+                </div>
+                <div className='text-right'>
+                  <p className="font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+                    <FiDollarSign/>
+                    {order.amount.toFixed(2).replace('.', ',')}
+                  </p>
+                   <span className="text-sm text-gray-500 dark:text-dark-text-secondary">
+                    {order.items.length} {order.items.length > 1 ? 'itens' : 'item'}
+                  </span>
+                </div>
               </div>
               
               <div className="space-y-4">
