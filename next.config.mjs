@@ -1,14 +1,13 @@
-/** @type {import('next').NextConfig} */
+** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
 };
 
-// Importa o plugin do bundle analyzer
 import nextBundleAnalyzer from '@next/bundle-analyzer';
-
-// Configura o analyzer para rodar apenas quando a variável ANALYZE for 'true'
 const withBundleAnalyzer = nextBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
-
-// Exporta a configuração "envolvida" pelo analyzer
 export default withBundleAnalyzer(nextConfig);
