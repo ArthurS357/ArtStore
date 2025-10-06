@@ -118,7 +118,7 @@ export default function HomePage() {
 
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen dark:bg-dark-background">
       <div
         className="relative text-white flex items-center justify-center p-16"
         style={{
@@ -128,7 +128,7 @@ export default function HomePage() {
           minHeight: '400px'
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-60 dark:opacity-70"></div>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -157,7 +157,7 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12 text-gray-800"
+          className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-dark-text"
         >
           Nossa Coleção de Arte
         </motion.h2>
@@ -169,7 +169,7 @@ export default function HomePage() {
             placeholder="Buscar por nome ou descrição..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-3 pl-12 border border-gray-300 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full p-3 pl-12 border border-gray-300 rounded-full text-gray-800 dark:text-dark-text bg-white dark:bg-dark-surface dark:border-dark-border focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
 
@@ -188,7 +188,7 @@ export default function HomePage() {
                 <ProductCard key={product.id} product={product} />
               ))
             ) : (
-              <p className="col-span-full text-center text-gray-500">Nenhum produto encontrado para sua busca.</p>
+              <p className="col-span-full text-center text-gray-500 dark:text-dark-text-secondary">Nenhum produto encontrado para sua busca.</p>
             )}
           </motion.div>
         )}
