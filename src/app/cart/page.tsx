@@ -43,7 +43,7 @@ export default function CartPage() {
 
   if (cartItems.length === 0) {
     return (
-      <main className="container mx-auto p-8 text-center flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
+      <main className="container mx-auto p-8 text-center flex flex-col items-center justify-center min-h-[calc(100vh-200px)] dark:bg-dark-background">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <FiShoppingCart className="mx-auto text-6xl text-gray-400 dark:text-gray-500 mb-4" />
           <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-dark-text">Seu carrinho está vazio</h1>
@@ -58,8 +58,8 @@ export default function CartPage() {
     );
   }
 
-  return (
-    <main className="container mx-auto p-4 md:p-8">
+   return (
+    <main className="container mx-auto p-4 md:p-8 dark:bg-dark-background">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

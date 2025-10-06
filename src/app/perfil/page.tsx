@@ -54,7 +54,7 @@ export default function ProfilePage() {
   }
 
    return (
-    <main className="container mx-auto p-4 md:p-8">
+    <main className="container mx-auto p-4 md:p-8 dark:bg-dark-background min-h-[calc(100vh-200px)]">
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-4xl font-bold text-gray-800 dark:text-dark-text mb-2">
           Olá, {session?.user?.name}!

@@ -61,8 +61,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   if (!product) return <p className="text-center p-8">Produto não encontrado.</p>;
 
   return (
-    <main className="container mx-auto p-4 md:p-8">
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+    <main className="container mx-auto p-4 md:p-8 dark:bg-dark-background">
+      <div className="bg-white dark:bg-dark-surface rounded-xl shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Coluna da Imagem */}
           <motion.div 
@@ -87,11 +87,11 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             animate="visible"
             className="p-8 flex flex-col justify-center"
           >
-            <motion.h1 variants={itemVariants} className="text-4xl font-bold text-gray-800 mb-4">{product.name}</motion.h1>
-            <motion.p variants={itemVariants} className="text-gray-600 text-lg mb-6">{product.description}</motion.p>
+            <motion.h1 variants={itemVariants} className="text-4xl font-bold text-gray-800 dark:text-dark-text mb-4">{product.name}</motion.h1>
+            <motion.p variants={itemVariants} className="text-gray-600 dark:text-dark-text-secondary text-lg mb-6">{product.description}</motion.p>
             
             <motion.div variants={itemVariants}>
-              <span className="text-4xl font-extrabold text-indigo-600 block mb-6">
+              <span className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 block mb-6">
                 R$ {product.price.toFixed(2).replace('.', ',')}
               </span>
             </motion.div>
