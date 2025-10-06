@@ -15,10 +15,24 @@ export async function POST(request: Request) {
     const validation = registerSchema.safeParse(body);
 
     if (!validation.success) {
-      return new NextResponse(JSON.stringify({ error: validation.error.format() }), { status: 400 });
+      return new NextResponse(JSON.stringify({ error: validation.error.format() }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     const { name, email, password } = validation.data;
+
+    const existingUser = await prisma.user.findUnique({
+      where: { email },
+    });
+
+    if (existingUser) {
+      return new NextResponse(JSON.stringify({ error: "Este email já está em uso." }), {
+        status: 409,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -26,15 +40,25 @@ export async function POST(request: Request) {
       data: {
         name,
         email,
-        password: hashedPassword
-      }
+        password: hashedPassword,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        createdAt: true,
+      },
     });
 
-    return NextResponse.json(user);
-
+    return new NextResponse(JSON.stringify(user), {
+      status: 201,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
-    // Evita expor o erro em produção, mas loga para debug
     console.error("Erro no registro:", error);
-    return new NextResponse("Erro interno do servidor.", { status: 500 });
+    return new NextResponse(JSON.stringify({ error: "Erro interno do servidor." }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
