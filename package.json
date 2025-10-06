@@ -10,8 +10,8 @@
     "postinstall": "prisma generate",
     "prisma:seed": "ts-node --project tsconfig.seed.json prisma/seed.ts",
     "analyze": "cross-env ANALYZE=true next build",
-    "test": "jest --watch"
-  },
+    "test": "jest"
+},
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
     "@prisma/client": "6.14.0",
