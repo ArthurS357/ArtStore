@@ -4,14 +4,15 @@ import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useSession, signOut } from 'next-auth/react';
 import { motion } from 'framer-motion';
-import { ThemeSwitcher } from './ThemeSwitcher'; 
+import { ThemeSwitcher } from './ThemeSwitcher';
+
 export default function Header() {
   const { cartItems } = useCart();
   const { data: session } = useSession();
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+    <header className="sticky top-0 z-50 bg-white dark:bg-dark-surface shadow-md dark:border-b dark:border-dark-border">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link
           href="/"
@@ -22,13 +23,13 @@ export default function Header() {
         <div className="flex items-center gap-6">
           <Link
             href="/"
-            className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            className="text-gray-600 dark:text-dark-text-secondary hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
             Home
           </Link>
           <Link
             href="/#products"
-            className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            className="text-gray-600 dark:text-dark-text-secondary hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
             Coleção
           </Link>
@@ -40,15 +41,14 @@ export default function Header() {
 
           {session ? (
             <>
-              {/* LINK ADICIONADO AQUI */}
               <Link
                 href="/perfil"
-                className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="text-gray-600 dark:text-dark-text-secondary hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 Meus Pedidos
               </Link>
               <div className="flex items-center gap-2">
-                <span className="text-gray-700 dark:text-gray-300 hidden sm:block">
+                <span className="text-gray-700 dark:text-dark-text-secondary hidden sm:block">
                   Olá, {session.user?.name?.split(' ')[0]}
                 </span>
                 <motion.button
@@ -65,7 +65,7 @@ export default function Header() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/login"
-                className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                className="bg-gray-200 dark:bg-dark-border text-gray-800 dark:text-dark-text px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
                 Login
               </Link>

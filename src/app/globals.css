@@ -2,22 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 255 255% 255%; 
-  --foreground: 240 10% 3.9%;  
-
-  --font-geist-sans: "Geist Sans", sans-serif;
-  --font-geist-mono: "Geist Mono", monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 240 10% 3.9%;   
-    --foreground: 0 0% 98%;      
-  }
-}
-
 body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  @apply bg-gray-100 text-gray-800;
+}
+
+.dark body {
+  @apply bg-dark-background text-dark-text;
 }

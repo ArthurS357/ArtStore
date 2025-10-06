@@ -25,33 +25,37 @@ type ProductCardProps = {
 function ProductCard({ product }: ProductCardProps) {
   return (
     <motion.div
-      variants={itemVariants} 
+      variants={itemVariants}
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.2 }}
       className="rounded-xl"
     >
-      <Link 
-        href={`/product/${product.id}`} 
+      <Link
+        href={`/product/${product.id}`}
         className="group block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
       >
-        <div className="bg-white rounded-xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+        <div className="bg-white dark:bg-dark-surface rounded-xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300 overflow-hidden dark:border dark:border-dark-border">
           <div className="overflow-hidden">
             <Image
               src={product.imageUrl}
-              alt={`Poster da obra de arte chamada ${product.name}`} 
+              alt={`Poster da obra de arte chamada ${product.name}`}
               width={400}
               height={400}
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="p-6">
-            <h2 className="text-xl font-semibold text-gray-800 truncate">{product.name}</h2>
-            <p className="text-gray-500 text-sm mt-1">{product.description.substring(0, 50)}...</p>
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-dark-text truncate">
+              {product.name}
+            </h2>
+            <p className="text-gray-500 dark:text-dark-text-secondary text-sm mt-1">
+              {product.description.substring(0, 50)}...
+            </p>
             <div className="mt-4 flex justify-between items-center">
-              <span className="text-2xl font-bold text-indigo-600">
+              <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
                 R$ {product.price.toFixed(2).replace('.', ',')}
               </span>
-              <span className="text-sm text-gray-500 group-hover:text-indigo-600 transition-colors">
+              <span className="text-sm text-gray-500 dark:text-dark-text-secondary group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                 Ver detalhes →
               </span>
             </div>
