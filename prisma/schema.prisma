@@ -1,3 +1,4 @@
+// Prisma
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["edge"]
