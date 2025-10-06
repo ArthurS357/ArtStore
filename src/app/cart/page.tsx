@@ -14,6 +14,31 @@ export default function CartPage() {
   const totalCost = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const handleCheckout = async () => {
+    const toastId = toast.loading('Finalizando o pedido...');
+
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cartItems, totalCost }),
+      });
+
+      toast.dismiss(toastId);
+
+      if (!response.ok) {
+        throw new Error('Falha ao criar o pedido.');
+      }
+
+      checkout(); // Limpa o carrinho
+      router.push('/checkout/success'); // Redireciona para a página de sucesso
+      toast.success('Pedido realizado com sucesso!');
+    } catch (error) {
+      toast.dismiss(toastId);
+      toast.error('Não foi possível finalizar a compra. Tente novamente.');
+      console.error('Falha no checkout', error);
+    }
   };
 
   if (cartItems.length === 0) {
