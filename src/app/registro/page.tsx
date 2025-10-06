@@ -50,12 +50,12 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-dark-background p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg"
+        className="w-full max-w-md bg-white dark:bg-dark-surface p-8 rounded-xl shadow-lg dark:border dark:border-dark-border"
       >
         <motion.form
           variants={formVariants}
@@ -63,7 +63,7 @@ export default function RegisterPage() {
           animate="visible"
           onSubmit={handleSubmit}
         >
-          <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-gray-800 dark:text-dark-text mb-8">
             Crie sua Conta
           </motion.h2>
 
@@ -73,8 +73,8 @@ export default function RegisterPage() {
               type="text"
               placeholder="Nome completo"
               value={name}
-              onChange={(e) => setName(e.target.value)} 
-              className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              onChange={(e) => setName(e.target.value)}
+              className="w-full p-3 pl-10 border border-gray-300 dark:border-dark-border rounded-lg text-gray-800 dark:text-dark-text bg-white dark:bg-dark-background focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </motion.div>
@@ -86,11 +86,11 @@ export default function RegisterPage() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full p-3 pl-10 border border-gray-300 dark:border-dark-border rounded-lg text-gray-800 dark:text-dark-text bg-white dark:bg-dark-background focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </motion.div>
-          
+
           <motion.div variants={itemVariants} className="mb-6 relative">
             <FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
@@ -98,7 +98,7 @@ export default function RegisterPage() {
               placeholder="Senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full p-3 pl-10 border border-gray-300 dark:border-dark-border rounded-lg text-gray-800 dark:text-dark-text bg-white dark:bg-dark-background focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </motion.div>
@@ -117,9 +117,9 @@ export default function RegisterPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-center text-gray-600 mt-6"
+          className="text-center text-gray-600 dark:text-dark-text-secondary mt-6"
         >
-          Já tem uma conta? <Link href="/login" className="text-indigo-600 hover:underline font-semibold">Faça login</Link>
+          Já tem uma conta? <Link href="/login" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">Faça login</Link>
         </motion.p>
       </motion.div>
     </div>

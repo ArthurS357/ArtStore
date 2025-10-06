@@ -45,12 +45,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-dark-background p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg"
+        className="w-full max-w-md bg-white dark:bg-dark-surface p-8 rounded-xl shadow-lg dark:border dark:border-dark-border"
       >
         <motion.form
           variants={formVariants}
@@ -58,7 +58,7 @@ export default function LoginPage() {
           animate="visible"
           onSubmit={handleSubmit}
         >
-          <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-gray-800 dark:text-dark-text mb-8">
             Bem-vindo de volta!
           </motion.h2>
           
@@ -72,7 +72,7 @@ export default function LoginPage() {
                 placeholder="Email"
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
-                className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                className="w-full p-3 pl-10 border border-gray-300 dark:border-dark-border rounded-lg text-gray-800 dark:text-dark-text bg-white dark:bg-dark-background focus:outline-none focus:ring-2 focus:ring-indigo-500" 
                 required 
               />
             </div>
@@ -88,7 +88,7 @@ export default function LoginPage() {
                 placeholder="Senha"
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
-                className="w-full p-3 pl-10 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                className="w-full p-3 pl-10 border border-gray-300 dark:border-dark-border rounded-lg text-gray-800 dark:text-dark-text bg-white dark:bg-dark-background focus:outline-none focus:ring-2 focus:ring-indigo-500" 
                 required 
               />
             </div>
@@ -108,9 +108,9 @@ export default function LoginPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-gray-600 mt-6"
+          className="text-center text-gray-600 dark:text-dark-text-secondary mt-6"
         >
-          Não tem uma conta? <Link href="/registro" className="text-indigo-600 hover:underline font-semibold">Registre-se</Link>
+          Não tem uma conta? <Link href="/registro" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">Registre-se</Link>
         </motion.p>
       </motion.div>
     </div>

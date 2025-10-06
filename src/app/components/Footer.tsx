@@ -3,8 +3,8 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-gray-100 mt-12 py-6 border-t border-gray-200">
-      <div className="container mx-auto px-8 text-center text-gray-500">
+    <footer className="bg-gray-100 dark:bg-dark-background mt-12 py-6 border-t border-gray-200 dark:border-dark-border">
+      <div className="container mx-auto px-8 text-center text-gray-500 dark:text-dark-text-secondary">
         
         <div className="flex justify-center items-center gap-6 mb-4">
           <a 
@@ -12,7 +12,7 @@ export default function Footer() {
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-gray-400 hover:text-indigo-600 transition-colors"
+            className="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
             <FiGithub size={24} />
           </a>
@@ -21,7 +21,7 @@ export default function Footer() {
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-gray-400 hover:text-indigo-600 transition-colors"
+            className="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
             <FiLinkedin size={24} />
           </a>
